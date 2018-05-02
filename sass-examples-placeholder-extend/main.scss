@@ -1,0 +1,93 @@
+/* 
+.wrapper {
+    .main {
+        .container {
+            .article {
+                .post {
+                    p {
+                        color: blue;
+                    }
+                }
+            }
+        }
+    }
+}
+*/
+// The code above is an example of deep nesting and we don't like it
+
+.main {
+    .wrapper & {
+        width:300px;
+        height:300px;
+        background-color: yellow;
+    }
+}
+
+// The code above is an example of how to use the parent selector
+
+p {
+    font: {
+        family: open-sans;
+        size: 30px;
+        weight: 500;
+    }
+    text: {
+        align: center;
+        transform: uppercase;
+    }
+}
+
+// .container {
+//     background: {
+//         image: url("https://dummyimage.com/450x250/f00/fff");
+//         size: cover;
+//         position: center center;
+//         repeat: no-repeat;
+//     }
+// }
+
+// The code above is an example of nested properties
+
+// %backgroundImage {
+//     background: {
+//         image: url("https://dummyimage.com/450x250/f00/fff");
+//         size: cover;
+//         position: center center;
+//         repeat: no-repeat;
+//     }
+// }
+
+// .container {
+//     @extend %backgroundImage;
+// }
+
+//  The Code above is an example of %placeholder and @extend.
+// The result compared to the code before it is the same,
+// but placeholders should be used with code that is intended to be reused.
+
+%backgroundImage {
+    background: {
+        size: cover;
+        position: center center;
+        repeat: no-repeat;
+    }
+}
+
+.div {
+    @extend %backgroundImage;
+}
+
+.container {
+	background-image: url("https://dummyimage.com/450x250/f00/fff");
+}
+
+.article {
+	background-image: url("https://dummyimage.com/450x250/000/fff");
+}
+
+.post {
+	background-image: url("https://dummyimage.com/450x250/ddd/fff");
+}
+
+// The code aboce is an example of how to use placeholders to reuse the backgroundImage properties a number of times, 
+// applying them to different classes with different background images.
