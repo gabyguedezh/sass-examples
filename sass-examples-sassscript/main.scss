@@ -1,0 +1,58 @@
+// @function pxToEm($value,$base) {
+//     @return ($value/$base) + em;
+// }
+
+// h1 {
+//     font-size:pxToEm(32,16);
+// }
+
+// Example of how to create a function to convert px to em
+
+$blue: #0997d3;
+$red: #e84610;
+$green: #bada55;
+$black: #000000;
+$white: #ffffff;
+
+$width: 300px;
+$height: 300px;
+
+$class: container;
+
+/* $colorsList: $blue, $red, $green, $black, $white; */
+
+
+$colors: (
+	black: #000000,
+	red: #e84610,
+	green: #bada55
+);
+
+@each $key, $value in $colors {
+  .item-#{$key} {
+    background-color: $value;
+  }
+}
+@function pxToEm($value, $base) {
+    @return ($value / $base) + em;
+}
+
+
+body {
+	background-color: $black;
+}
+
+div {
+	width: $width;
+	height: $height;
+	border: 1px solid $black;
+}
+
+h1 {
+	color: $white;
+	font-size: pxToEm(32, 16);
+}
+
+div.#{$class} {
+	background-color: orange;
+}

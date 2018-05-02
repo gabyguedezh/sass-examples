@@ -1,0 +1,26 @@
+/* $colorsList: $blue, $red, $green, $black, $white; */
+.item-black {
+  background-color: #000000; }
+
+.item-red {
+  background-color: #e84610; }
+
+.item-green {
+  background-color: #bada55; }
+
+body {
+  background-color: #000000; }
+
+div {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #000000; }
+
+h1 {
+  color: #ffffff;
+  font-size: 2em; }
+
+div.container {
+  background-color: orange; }
+
+/*# sourceMappingURL=main.css.map */
