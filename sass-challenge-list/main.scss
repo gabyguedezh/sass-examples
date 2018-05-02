@@ -1,0 +1,17 @@
+$colors: (
+1:#aaa,    //dark grey
+2:#bbb,    //grey
+3:#ccc,    //light-grey
+4:#ddd,    //very-light-grey
+);
+
+@each $key, $value in $colors {
+    .container-#{$key}{
+        background-color:$value;
+    }
+}
+
+div {
+    width:100px;
+    height:100px;
+}
